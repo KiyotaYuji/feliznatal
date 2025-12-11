@@ -88,7 +88,7 @@ html {
 
 .floco-neve {
     position: absolute;
-    top : -50px;
+    top : 110vh;
     color: white;
     font-size: 1.25rem;
     opacity: 0.6;

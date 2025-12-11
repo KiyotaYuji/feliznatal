@@ -1,0 +1,375 @@
+/* Reset e configurações básicas */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+#root {
+    width: 100%;
+    min-height: 100vh;
+}
+
+/* Esconder scrollbar mas manter funcionalidade */
+::-webkit-scrollbar {
+    width: 0px;
+    background: transparent;
+}
+
+html {
+    scrollbar-width: none;
+    scroll-behavior: smooth;
+}
+
+/* ========== ANIMAÇÕES ========== */
+
+@keyframes neve {
+    0% {
+        transform: translateY(-10vh) rotate(0deg);
+    }
+    100% {
+        transform: translateY(110vh) rotate(360deg);
+    }
+}
+
+@keyframes piscar {
+    0%, 100% {
+        opacity: 0.3;
+    }
+    50% {
+        opacity: 1;
+    }
+}
+
+@keyframes pulsar {
+    0%, 100% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.05);
+    }
+}
+
+@keyframes pular {
+    0%, 100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-10px);
+    }
+}
+
+/* ========== CONTAINER PRINCIPAL ========== */
+
+.container-principal {
+    background: linear-gradient(to bottom, #7f1d1d, #14532d, #450a0a);
+    min-height: 250vh;
+    position: relative;
+    overflow: hidden;
+}
+
+/* ========== CAMADAS DE EFEITOS ========== */
+
+.camada-neve,
+.camada-estrelas {
+    position: fixed;
+    inset: 0;
+    pointer-events: none;
+    z-index: 0;
+}
+
+.floco-neve {
+    position: absolute;
+    color: white;
+    font-size: 1.25rem;
+    opacity: 0.6;
+    animation: neve linear infinite;
+}
+
+.estrela {
+    position: absolute;
+    color: #fef08a;
+    font-size: 0.75rem;
+    animation: piscar 2s ease-in-out infinite;
+}
+
+/* ========== SEÇÕES DE SCROLL ========== */
+
+.secao-scroll {
+    position: sticky;
+    top: 0;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 10;
+}
+
+.conteudo-secao {
+    text-align: center;
+    transition: all 0.5s ease;
+}
+
+.conteudo-mensagem {
+    max-width: 48rem;
+    padding: 0 1.5rem;
+}
+
+.conteudo-final {
+    max-width: 56rem;
+    padding: 0 1.5rem;
+}
+
+.secao-final{
+    position: relative;
+}
+
+/* ========== SEÇÃO 1: TÍTULO INICIAL ========== */
+
+.arvore-natal {
+    font-size: 6rem;
+    font-weight: bold;
+    color: white;
+    margin-bottom: 1.5rem;
+    filter: drop-shadow(0 25px 25px rgba(0, 0, 0, 0.15));
+    animation: pulsar 2s ease-in-out infinite;
+}
+
+.titulo-principal {
+    font-size: 4rem;
+    font-weight: bold;
+    color: white;
+    filter: drop-shadow(0 10px 8px rgba(0, 0, 0, 0.04));
+}
+
+.texto-scroll {
+    font-size: 1.5rem;
+    color: white;
+    margin-top: 1.5rem;
+    opacity: 0.8;
+    animation: pular 2s ease-in-out infinite;
+}
+
+/* ========== SEÇÃO 2: MENSAGEM DE ALEGRIA ========== */
+
+.emoji-grande {
+    font-size: 6rem;
+    margin-bottom: 2rem;
+}
+
+.titulo-secao {
+    font-size: 3rem;
+    font-weight: bold;
+    color: white;
+    margin-bottom: 1.5rem;
+    filter: drop-shadow(0 10px 8px rgba(0, 0, 0, 0.04));
+}
+
+.texto-secao {
+    font-size: 1.5rem;
+    color: white;
+    line-height: 1.75;
+    opacity: 0.9;
+}
+
+/* ========== SEÇÃO 3: RENA E PRESENTES ========== */
+
+.grupo-emojis {
+    display: flex;
+    gap: 1.5rem;
+    font-size: 6rem;
+    margin-bottom: 2rem;
+    justify-content: center;
+    align-items: center;
+}
+
+.presente-animado {
+    animation: pular 2s ease-in-out infinite;
+}
+
+.rena {
+    font-size: 7rem;
+}
+
+.titulo-rena {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+}
+
+.texto-magico {
+    font-size: 1.25rem;
+    color: white;
+    opacity: 0.9;
+}
+
+/* ========== SEÇÃO 4: CARTÃO FINAL ========== */
+
+.cartao-natal {
+    background-color: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(10px);
+    border-radius: 1.5rem;
+    box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+    padding: 2rem;
+    border: 4px solid #ef4444;
+}
+
+.emoji-arvore {
+    font-size: 4rem;
+    margin-bottom: 1.5rem;
+}
+
+.titulo-cartao {
+    font-size: 2rem;
+    font-weight: bold;
+    color: #dc2626;
+    margin-bottom: 1.5rem;
+}
+
+.citacao {
+    font-size: 1.5rem;
+    color: #374151;
+    margin-bottom: 1.5rem;
+    line-height: 1.75;
+    font-style: italic;
+}
+
+.mensagem-principal {
+    font-size: 1.25rem;
+    color: #4b5563;
+    margin-bottom: 1rem;
+}
+
+.mensagem-secundaria {
+    font-size: 1.25rem;
+    color: #4b5563;
+    margin-bottom: 1.5rem;
+}
+
+.assinatura {
+    border-top: 2px solid #fca5a5;
+    padding-top: 1rem;
+    margin-top: 1rem;
+}
+
+.texto-assinatura {
+    color: #4b5563;
+    font-size: 1.125rem;
+    margin-bottom: 0.5rem;
+}
+
+.nome-assinatura {
+    font-size: 2rem;
+    font-weight: bold;
+    color: #dc2626;
+}
+
+.decoracao-final {
+    display: flex;
+    justify-content: center;
+    gap: 1.5rem;
+    margin-top: 2rem;
+    font-size: 2.5rem;
+}
+
+/* ========== BARRA DE PROGRESSO ========== */
+
+.barra-progresso-container {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 0.5rem;
+    background-color: rgba(255, 255, 255, 0.2);
+    z-index: 50;
+}
+
+.barra-progresso {
+    height: 100%;
+    background: linear-gradient(to right, #ef4444, #22c55e, #eab308);
+    transition: width 0.3s ease;
+}
+
+/* ========== RESPONSIVIDADE ========== */
+
+/* Tablets e telas médias */
+@media (min-width: 768px) {
+    .arvore-natal {
+        font-size: 8rem;
+    }
+
+    .titulo-principal {
+        font-size: 6rem;
+    }
+
+    .titulo-secao {
+        font-size: 4rem;
+    }
+
+    .titulo-cartao {
+        font-size: 3rem;
+    }
+
+    .citacao {
+        font-size: 1.75rem;
+    }
+
+    .mensagem-principal,
+    .mensagem-secundaria {
+        font-size: 1.5rem;
+    }
+
+    .nome-assinatura {
+        font-size: 2.5rem;
+    }
+
+    .decoracao-final {
+        font-size: 3rem;
+    }
+
+    .cartao-natal {
+        padding: 4rem;
+    }
+}
+
+/* Mobile pequeno */
+@media (max-width: 480px) {
+    .arvore-natal {
+        font-size: 4rem;
+    }
+
+    .titulo-principal {
+        font-size: 2.5rem;
+    }
+
+    .titulo-secao {
+        font-size: 2rem;
+    }
+
+    .titulo-cartao {
+        font-size: 1.75rem;
+    }
+
+    .citacao {
+        font-size: 1.125rem;
+    }
+
+    .cartao-natal {
+        padding: 2rem;
+    }
+
+    .grupo-emojis {
+        font-size: 4rem;
+    }
+
+    .rena {
+        font-size: 5rem;
+    }
+}

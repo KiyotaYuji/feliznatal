@@ -1,3 +1,10 @@
+"homepage": "https://github.com/KiyotaYuji/feliznatal",
+"scripts:"{
+        "dev": "vite",
+        "build": "tsc -b && vite build",
+        "predeploy": "npm run build",
+        "deploy": "gh-pages -d dist"
+}
 {
   "name": "feliznatal",
   "private": true,

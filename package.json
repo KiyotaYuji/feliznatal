@@ -1,23 +1,20 @@
-"homepage": "https://github.com/KiyotaYuji/feliznatal",
-"scripts:"{
-        "dev": "vite",
-        "build": "tsc -b && vite build",
-        "predeploy": "npm run build",
-        "deploy": "gh-pages -d dist"
-}
 {
   "name": "feliznatal",
   "private": true,
   "version": "0.0.0",
   "type": "module",
+  "homepage": "https://KiyotaYuji.github.io/feliznatal",
   "scripts": {
     "dev": "vite",
     "build": "tsc && vite build",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d dist"
   },
   "devDependencies": {
     "@types/react": "^19.2.7",
     "@types/react-dom": "^19.2.3",
+    "@vitejs/plugin-react": "^5.1.2",
     "gh-pages": "^6.3.0",
     "typescript": "~5.9.3",
     "vite": "npm:rolldown-vite@7.2.5"
